@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensonge, Enfant Du Net & UserIntelX, Correcteur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #0a0a0a;
+      --card-bg: #131313;
+      --accent: #cc00ff;
+      --accent-light: #00fff2;
+      --text: #f5f5f5;
+      --white-card-bg: #ffffff;
+      --white-text: #000000;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Unbounded', sans-serif;
+      background-color: var(--main-bg);
+      color: var(--text);
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-wrap: wrap;
+      background-image: radial-gradient(circle at 30% 30%, #1f1c2c 0%, #0a0a0a 100%);
+    }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 24px;
+      padding: 3rem;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(204, 0, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+      box-shadow: 0 0 60px rgba(204, 0, 255, 0.4);
+    }
+    .card.white {
+      background-color: var(--white-card-bg);
+      color: var(--white-text);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+    .card.white:hover {
+      box-shadow: 0 0 60px rgba(255, 255, 255, 0.4);
+    }
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 15px var(--accent);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover .profile-img {
+      transform: scale(1.05);
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .card.white h1 {
+      color: var(--white-text);
+    }
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    strong {
+      color: var(--accent-light);
+    }
+    .hidden {
+      display: none;
+    }
+    .fade {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s ease;
+    }
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .card {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" onclick="toggleInfo('mensonge')">
+    <img src="https://media.discordapp.net/attachments/1373698469793104065/1373799766441590838/7fa4df7c7df37e316e6d74333b150718.png?ex=682bba3c&is=682a68bc&hm=89c06c666a1158601c745822f006e59699fa7535c73857aae194770c33879717&=&format=webp&quality=lossless" alt="Mensonge" class="profile-img">
+    <h1 id="title-mensonge" class="fade show">Mensonge</h1>
+    <div id="fullInfo-mensonge" class="hidden fade">
+      <p>Salut à tous, je suis Mensonge.</p>
+      <p>J'ai 16 ans et je fais partie de la communauté Discord depuis 1 an et demi.</p>
+      <p>Parmi mes projets : <strong>Sx</strong>, <strong>la Gestapo</strong>, <strong>URSS</strong> et le <strong>deface de plusieurs sites du gouvernement turc</strong>.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleInfo('edn')">
+    <img src="https://media.discordapp.net/attachments/1373698469793104065/1373804302392623165/8ee299449c33c9dceeda09d95eca7bd2.png?ex=682bbe75&is=682a6cf5&hm=d9983f738f83aae927730015e0b8894539ca2f5fba184f78c3aea45f77f24227&=&format=webp&quality=lossless" alt="Enfant Du Net" class="profile-img">
+    <h1 id="title-edn" class="fade show">Enfant Du Net</h1>
+    <div id="fullInfo-edn" class="hidden fade">
+      <p>Salut, moi c'est Enfant Du Net.</p>
+      <p>J'ai 17 ans et j'ai participé à de nombreux projets, notamment ceux de Mensonge, ainsi qu'à beaucoup d'autres.</p>
+      <p>Je suis actif dans la communauté Discord depuis plus de 2 ans.</p>
+    </div>
+  </div>
+
+  <div class="card white" onclick="toggleInfo('userintelx')">
+    <img src="https://cdn.discordapp.com/attachments/1373698469793104065/1373811412899594270/0997971b50aa5f9cd2e367d4e0aa9f08.png?ex=682bc515&is=682a7395&hm=3930a9c247fd86c0a25fa5167c2d8f636e7a86df65cfee44ec3ac846b1e0455e&" alt="UserIntelX" class="profile-img">
+    <h1 id="title-userintelx" class="fade show">UserIntelX</h1>
+    <div id="fullInfo-userintelx" class="hidden fade">
+      <p>Bonjour à tous, je suis UserIntelX alias Tabasseurs.</p>
+      <p>J'ai 16 ans. Je suis dans la communauté depuis 4 ans, mais j'ai changé d'identité plusieurs fois.</p>
+      <p>J'ai été owner de <strong>Sx</strong> et <strong>Gestapo</strong>.</p>
+    </div>
+  </div>
+
+  <div class="card white" onclick="toggleInfo('correcteur')">
+    <img src="https://cdn.discordapp.com/attachments/1373698469793104065/1373813324491395112/6ea4dd24c7706478d8955da1f15a447d.png?ex=682bc6dc&is=682a755c&hm=0e6d800dd6172a0626212596abb4ba9236ed829fbeb3fa58513cc3823d1bfbc9&" alt="Correcteur" class="profile-img">
+    <h1 id="title-correcteur" class="fade show">Correcteur</h1>
+    <div id="fullInfo-correcteur" class="hidden fade">
+      <p>Salut, je suis Correcteur.</p>
+      <p>J'ai 15 ans. Je suis moins connu qu'eux car je n'ai fait qu'une apparition.</p>
+      <p>C'était sur <strong>Sx</strong> où j'ai pu être créateur. J'ai aussi fondé le <strong>HWSGROUP</strong> qui a mené des attaques sur des sites du gouvernement turc.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(user) {
+      const title = document.getElementById(`title-${user}`);
+      const fullInfo = document.getElementById(`fullInfo-${user}`);
+
+      const showingInfo = fullInfo.classList.contains('show');
+      if (!showingInfo) {
+        fullInfo.classList.remove('hidden');
+        setTimeout(() => {
+          fullInfo.classList.add('show');
+          title.classList.remove('show');
+          setTimeout(() => title.classList.add('hidden'), 300);
+        }, 10);
+      } else {
+        title.classList.remove('hidden');
+        setTimeout(() => {
+          title.classList.add('show');
+          fullInfo.classList.remove('show');
+          setTimeout(() => fullInfo.classList.add('hidden'), 300);
+        }, 10);
+      }
+    }
+  </script>
+</body>
+</html>
